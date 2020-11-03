@@ -6,18 +6,18 @@ const app = express()
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
-app.use(express.static(__dirname + '/./client'));
+app.use(express.static(__dirname + '/./client'))
 
 
 app.post('/json' , (req,res) => {
     console.log(req.body)
-    res.send('first')
+    res.json(req.body)
 })
 
-app.get('/json' , (req,res) => {
-    // console.log(req.body)
-    res.send('csv sent')
-})
+// app.get('/json' , (req,res) => {
+//     // console.log(req.body)
+//     res.send('csv sent')
+// })
 
 
 app.listen(3000,() => {

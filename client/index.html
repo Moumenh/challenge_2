@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Json To CSV</title>
 </head>
 <body>
-    <h1>Opened ?</h1>
+    <form class="container">
+        <label class='title' for="json">Json to CSV</label>
+        <textarea id="json" rows="4" cols="50"></textarea>
+        <br><br>
+        <input id='sendJson' type="submit" value="Submit">
+    </form>
+    <div class="csv">
+
+    </div>
+    <script src='app.js'></script>
 </body>
+
 </html>
 
