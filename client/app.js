@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('ready')
     const jsonText = document.querySelector('#json')
     const submitJson = document.querySelector('#sendJson')
-
+    const csvRespond = document.querySelector('#csv')
     //     const create = (json, successCB, errorCB = null) => {
         
     //     $.ajax({
@@ -54,8 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendData = (json) => {
         sendHttpRequest('POST', 'http://127.0.0.1:3000/json', json)
           .then(responseData => {
-            // csv = responseData
-            console.log(responseData)
+            csv = responseData
+            console.log(csv)
+            csvRespond.innerHTML = csv
           })
           .catch(err => {
             console.log(err)

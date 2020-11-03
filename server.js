@@ -18,7 +18,7 @@ function arrayToCSV(data) {
 app.post('/json' , (req,res) => {
     let array = []
     array.push(req.body)
-    let result = arrayToCSV(array)
+    let result = arrayToCSV(req.body)
 
     console.log(result)
     res.json(result)
