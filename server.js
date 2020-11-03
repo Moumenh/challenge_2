@@ -33,9 +33,13 @@ function arrayToCSV(data) {
 
 app.post('/json' , (req,res) => {
     let array = []
-    array.push(req.body)
-    let result = arrayToCSV(array)
-
+    let result = []
+    if(Array.isArray(req.body)){
+        result = arrayToCSV(req.body)
+    }else{
+        array.push(req.body)
+        result = arrayToCSV(array)  
+    }
     console.log(result)
     res.json(result.join('\n'))
 })
