@@ -14,12 +14,12 @@ function arrayToCSV(data) {
     let child = csv[0].pop()
     if (Array.isArray(child) && child.length > 0) {
         for (let i = 0; i < child.length; i++) {
-            let rec = []
-            rec = arrayToCSV([child[i]])
-            rec.shift()
-            if (rec.length !== 0) {
-                for (let i = 0; i < rec.length; i++) {
-                    csv.push(rec[i])
+            let array = []
+            array = arrayToCSV([child[i]])
+            array.shift()
+            if (array.length !== 0) {
+                for (let i = 0; i < array.length; i++) {
+                    csv.push(array[i])
                 }
             }
         }
