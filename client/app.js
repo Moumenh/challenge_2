@@ -46,9 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
 
-      const sendData = (json) => {
+      
+
+    let json = {}
+    let csv = ''
+
+    const sendData = (json) => {
         sendHttpRequest('POST', 'http://127.0.0.1:3000/json', json)
           .then(responseData => {
+            // csv = responseData
             console.log(responseData)
           })
           .catch(err => {
@@ -56,22 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
           })
       }
 
-
-
-
-    let json = {}
-
     const handeChange = (e) => {
         json = e.target.value
         console.log(json)
         // create(json)
-        sendData(json)
+        
 
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
+        sendData(json)
     }
 
 
